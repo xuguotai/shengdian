@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/bar_title_backwhite" />
+
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="@mipmap/ic_logo" />
+
+    <TextView
+        android:id="@+id/tv_versionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="当前版本V1.0.0"
+        android:textColor="#898989"
+        android:textSize="13sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_marginTop="30dp"
+        android:background="#F7F6F6" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:text="- 圣典钢琴 -"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:lineSpacingExtra="5dp"
+        android:text="     圣典钢琴APP属于圣典成人钢琴俱乐部官方APP，注册名：北京智华圣典艺术培训中心，成立于北京全国直营12年，是一家只教成人钢琴的培训机构。"
+        android:textColor="#898989"
+        android:textSize="15sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:lineSpacingExtra="5dp"
+        android:text="     圣典钢琴APP是一个集约课、管理、服务、后台、琴友圈、SD豆、商城为一体的综合性大型APP，在这里，您可以学会钢琴，感受钢琴带来的快乐，也可以做任务赚SD豆去商城换购您想要的商品等，好用又好玩！"
+        android:textColor="#898989"
+        android:textSize="15sp" />
+
+
+</LinearLayout>

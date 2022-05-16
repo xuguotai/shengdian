@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/livepusher_content_bg">
+
+    <ImageView
+        android:layout_width="116dp"
+        android:layout_height="112dp"
+        android:layout_centerInParent="true" />
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/livepusher_tx_cloud_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <include
+            android:id="@+id/layout_live_pusher_info"
+            layout="@layout/trtcliveroom_include_live_pusher_info"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:id="@+id/btn_close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@mipmap/trtcliveroom_exit_room"
+            android:onClick="onClick" />
+
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/lv_im_msg"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="90dp"
+        android:cacheColorHint="@color/trtcliveroom_transparent"
+        android:divider="#3c421b1b"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="none"
+        android:stackFromBottom="true" />
+
+    <RelativeLayout
+        android:id="@+id/rl_gift_show"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_above="@+id/lv_im_msg"
+        android:layout_marginBottom="50dp" />
+
+    <LinearLayout
+        android:id="@+id/livepusher_ll_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_message_input"
+            android:layout_width="@dimen/trtcliveroom_btn_size"
+            android:layout_height="@dimen/trtcliveroom_btn_size"
+            android:background="@mipmap/trtcliveroom_icon_message"
+            android:onClick="onClick" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/livepusher_btn_switch_camera"
+            android:layout_width="@dimen/trtcliveroom_btn_size"
+            android:layout_height="@dimen/trtcliveroom_btn_size"
+            android:background="@mipmap/trtcliveroom_icon_switch_camera_on"
+            android:onClick="onClick" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!--<Button-->
+        <!--android:id="@+id/livepusher_btn_beauty"-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:background="@mipmap/livepusher_lvb_beauty"-->
+        <!--android:onClick="onClick" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1" />-->
+
+        <Button
+            android:id="@+id/livepusher_btn_bgm"
+            android:layout_width="@dimen/trtcliveroom_btn_size"
+            android:layout_height="@dimen/trtcliveroom_btn_size"
+            android:background="@mipmap/trtcliveroom_music_big"
+            android:onClick="onClick" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/livepusher_btn_video_quality"
+            android:layout_width="@dimen/trtcliveroom_btn_size"
+            android:layout_height="@dimen/trtcliveroom_btn_size"
+            android:background="@mipmap/livepusher_role"
+            android:onClick="onClick"
+            android:visibility="invisible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/livepusher_btn_setting"
+            android:layout_width="@dimen/trtcliveroom_btn_size"
+            android:layout_height="@dimen/trtcliveroom_btn_size"
+            android:background="@mipmap/livepusher_more"
+            android:onClick="onClick"
+            android:visibility="invisible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!--<com.tencent.liteav.demo.beauty.view.BeautyPanel-->
+    <!--android:id="@+id/livepusher_bp_beauty_pannel"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:visibility="gone" />-->
+
+    <TextView
+        android:id="@+id/livepusher_tv_net_error_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/livepusher_red"
+        android:gravity="center"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:text="@string/livepusher_network_warning_hint"
+        android:textColor="@color/livepusher_white"
+        android:textSize="10dp"
+        android:visibility="gone" />
+
+    <com.tryine.sdgq.common.live.activity.push.AudioEffectPanel
+        android:id="@+id/livepusher_audio_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/ll_link"
+        android:layout_width="110dp"
+        android:layout_height="190dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="100dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/livepusher_content_bg"
+            android:layout_margin="5dp">
+
+            <com.tencent.rtmp.ui.TXCloudVideoView
+                android:id="@+id/tx_cloud_view_audience"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_et_close"
+            android:onClick="onClick" />
+
+    </FrameLayout>
+
+
+</RelativeLayout>

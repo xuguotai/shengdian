@@ -1,0 +1,37 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:2:1-3:53
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:2:1-3:53
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:2:1-3:53
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:2:1-3:53
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:2:1-3:53
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:2:1-3:53
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:2:1-3:53
+	package
+		ADDED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:3:5-50
+		INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+		INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+		ADDED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:2:1-3:53
+		INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+		ADDED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:2:1-3:53
+		INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml:2:11-69
+uses-sdk
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+		ADDED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+		INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+		ADDED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml
+		INJECTED from /Users/zhangshuaijun/Downloads/shengdian 2/superplayerkit/src/main/AndroidManifest.xml

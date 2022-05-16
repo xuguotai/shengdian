@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/white_bg_radius_10"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="20dp">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="暂停卡"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/tv_suspendedNum"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/shape_edittext_radius5_f5f5f5"
+        android:hint="请输入暂停天数"
+        android:inputType="number"
+        android:maxLength="3"
+        android:paddingLeft="15dp"
+        android:textColorHint="#898989"
+        android:textSize="14sp" />
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/white_bg_radius_10">
+
+        <LinearLayout
+            android:id="@+id/ll_jd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_jd"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:button="@null"
+                android:checked="true"
+                android:clickable="false"
+                android:drawableLeft="@drawable/pro_check_bg"
+                android:drawablePadding="15dp"
+                android:focusable="false"
+                android:paddingLeft="15dp"
+                android:paddingRight="22dp"
+                android:text="金豆"
+                android:textColor="#333333"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_jd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="0金豆可暂停一天"
+                android:textColor="#AF8C7E" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_yd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_yd"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:button="@null"
+                android:clickable="false"
+                android:drawableLeft="@drawable/pro_check_bg"
+                android:drawablePadding="15dp"
+                android:focusable="false"
+                android:paddingLeft="15dp"
+                android:paddingRight="22dp"
+                android:text="银豆"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_yd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="0银豆可暂停一天"
+                android:textColor="#AF8C7E" />
+
+        </LinearLayout>
+
+
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="30dp"
+        android:background="#E1E1E1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#E1E1E1" />
+
+        <TextView
+            android:id="@+id/tv_insure"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="#AF8C7E"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

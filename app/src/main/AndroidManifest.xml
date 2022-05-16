@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.tryine.sdgq">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
+    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+
+    <application
+        android:name="com.tryine.sdgq.Application"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="LockedOrientationActivity"
+        tools:replace="android:allowBackup">
+
+        <activity android:name="com.tryine.sdgq.common.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.tryine.sdgq.common.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.TestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.SettingActivity"
+            android:label="系统设置"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.SetPasswordActivity"
+            android:label="修改密码"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.SbListHomeActivity"
+            android:label="我的"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.SetPhoneActivity"
+            android:label="修改手机号"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.PersonalActivity"
+            android:label="个人信息"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.PersonalSmrzActivity"
+            android:label="实名认证"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.UpdateUserNameActivity"
+            android:label="修改昵称"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.UpdateSexActivity"
+            android:label="修改性别"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.MessageDetailActivity"
+            android:label="消息详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.wallet.MyWalletActivity"
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.wallet.JDRechargeActivity"
+            android:label="金豆充值"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.wallet.WithdrawActivity"
+            android:label="提现"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.wallet.AlipayActivity"
+            android:label="支付宝提现"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.wallet.JDDetailActivity"
+            android:label="金豆明细"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.wallet.JDIncreaseActivity"
+            android:label="金豆/银豆转增"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.circle.activity.TopicDetailActivity"
+            android:label="话题详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.user.activity.LoginActivity"
+            android:label="登录"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.user.activity.BindAccountActivity"
+            android:label="绑定"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.BuyCourseHomeActivity"
+            android:label="购买课程首页"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.MineOnlineCourseListActivity"
+            android:label="线下课程章节列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.CourseDateilActivity"
+            android:label="购买课程详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.SignUpActivity"
+            android:label="课程报名咨询"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.ReserveCourseActivity"
+            android:label="已预约课程列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.CancelReserveCourseActivity"
+            android:label="已取消预约课程列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.OnlineCourseRecordActivity"
+            android:label="线上课程记录"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.HdActivity"
+            android:label="活动列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.AddCourseDataActivity"
+            android:label="添加课堂资料"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.LookCourseDataActivity"
+            android:label="查看课堂资料"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.CourseCommentActivity"
+            android:label="课程评价"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.SdSdHomeVideoHomeActivity"
+            android:label="圣典视频"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.MineCourseHomeActivity"
+            android:label="我的课程"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.CampusSearchActivity"
+            android:label="搜索校区"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.VideoSearchActivity"
+            android:label="搜索视频"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.SdVideoListActivity"
+            android:label="圣典视频列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.AllCourseActivity"
+            android:label="全部课程"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.BargainOrderDetailActivity"
+            android:label="砍价订单详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.SdVideoDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="圣典视频详情"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.CampusListActivity"
+            android:label="校区展示列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.ShopPositionActivity"
+            android:label="校区位置地图"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.CampusDetailActivity"
+            android:label="校区详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.BargainHomeActivity"
+            android:label="砍价专区"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.TeacherDetailHomeActivity"
+            android:label="教师详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.SdSheetMusicListActivity"
+            android:label="琴谱列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.SheetMusicSearchActivity"
+            android:label="琴谱搜索"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.SheetMusicPageActivity"
+            android:label="琴谱全屏"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.MallTypeListActivity"
+            android:label="商品分类列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.GoodsDetailActivity"
+            android:label="商品详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.MallCartActivity"
+            android:label="购物车"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.GoodsSearchActivity"
+            android:label="商品搜索"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.GoodTypeListHomeActivity"
+            android:label="商品分类列表首页"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.MallConfirmOrderActivity"
+            android:label="确认订单"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.GoodsCommentListActivity"
+            android:label="商品评论列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.TyCardHomeActivity"
+            android:label="我的体验卡首页"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.FeedbackActivity"
+            android:label="投诉建议"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.MineTyCardActivity"
+            android:label="我的体验卡"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.TyCardZZActivity"
+            android:label="体验卡转赠好友"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.CollectListHomeActivity"
+            android:label="我的收藏"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.circle.activity.PersonalHomePageActivity"
+            android:label="个人主页"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.circle.activity.ReportActivity"
+            android:label="举报"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.user.activity.RetrievePasswordActivity"
+            android:label="找回密码"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.user.activity.PayPasswordActivity"
+            android:label="设置支付密码"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.user.activity.RegisterActivity"
+            android:label="注册"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.user.activity.UpdatePhoneActivity"
+            android:label="更换手机号"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.user.activity.UpdatePasswordActivity"
+            android:label="修改密码"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.NoticeListActivity"
+            android:label="公告列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.NoticeDetailActivity"
+            android:label="公告详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.TeacherListActivity"
+            android:label="教师列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.MyRewardListActivity"
+            android:label="我的打赏/我的礼物"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.CreateTeacherActivity"
+            android:label="成为老师"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.InviteFriendsActivity"
+            android:label="邀请码"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.SheetMusicDetailActivity"
+            android:label="琴谱详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.H5WebViewActivity"
+            android:label="H5"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.H5WebViewJsActivity"
+            android:label="H5"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.UploadVideoActivity"
+            android:label="上传视频"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.MineKtzlHomeActivity"
+            android:label="课堂资料列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.activity.OpenLiveRoomActivity"
+            android:label="开启直播"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.activity.IllustrateActivity"
+            android:label="登录说明"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.activity.push.CameraPushMainActivity"
+            android:label="开启直播"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.activity.push.LivePlayerMainActivity"
+            android:label="看直播"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.activity.ProtocolActivity"
+            android:label="协议"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.PayRecordListActivity"
+            android:label="支付记录"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.MessageListActivity"
+            android:label="消息中心"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.circle.activity.AddCircleActivity"
+            android:label="发布圈子"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.circle.activity.AddHdActivity"
+            android:label="参与活动发布"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.circle.activity.CircleSearchHomeActivity"
+            android:label="搜索圈子"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.circle.activity.CircleDetailActivity"
+            android:label="圈子详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.circle.activity.PersonalSettingActivity"
+            android:label="个人主页设置"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.circle.activity.LabelListActivity"
+            android:label="编辑标签"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.OrderListHomeActivity"
+            android:label="商城订单首页"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.LookAddressActivity"
+            android:label="查看地址"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.OrderDetailActivity"
+            android:label="订单详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.ApplyRefundActivity"
+            android:label="申请退款"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.ReleaseCommentActivity"
+            android:label="评价"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.PaySuccessActivity"
+            android:label="支付成功"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mall.activity.OrderSearchActivity"
+            android:label="订单搜索"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.TaskHomeActivity"
+            android:label="任务广场"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.BargainOrderListHomeActivity"
+            android:label="砍价订单首页"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.home.activity.BargainDetailActivity"
+            android:label="帮砍价详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.BargainOrderSearchActivity"
+            android:label="搜索"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.AboutActivity"
+            android:label="关于我们"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.MineCircleHomeActivity"
+            android:label="我的圈子"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.MineCourseListActivity"
+            android:label="我的课程"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.MineCourseChildListActivity"
+            android:label="我的课程-学生列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.TyCardSearchActivity"
+            android:label="体验卡搜索"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.mine.activity.AttendClassRecordActivity"
+            android:label="上课记录"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.view.FullScreenImg.AssImgPreviewActivity"
+            android:label="查看大图"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.activity.LiveTypeListActivity"
+            android:label="直播类型列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.activity.LiveCourseDetailActivity"
+            android:label="直播课程详情"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.activity.LiveListActivity"
+            android:label="直播中列表"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.activity.LiveSearchActivity"
+            android:label="搜索直播课程"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.activity.LiveCourseBuyDetailActivity"
+            android:label="直播课程详情-已购买"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tryine.sdgq.common.live.tencent.liteav.liveroom.ui.audience.TCAudienceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.tryine.sdgq.common.circle.activity.VideoPlayFullScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="圣典视频详情"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="微信登录授权"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="101988355" /> <!-- 开放平台获取的APPID -->
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.tryine.sdgq.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="com.tencent.rtmp.video.TXScreenCapture$TXScreenCaptureAssistantActivity"
+            android:theme="@android:style/Theme.Translucent"/>
+
+        <provider
+            android:name="com.tryine.sdgq.common.live.tencent.liteav.tuigift.core.TUIGiftProvider"
+            android:authorities="${applicationId}.TUIGiftProvider"
+            android:enabled="true"
+            android:exported="false"/>
+
+        <!-- 高德 -->
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="47714bd8ee93e4657762718ed92827b1">
+        </meta-data>
+
+
+        <activity android:name="com.tryine.sdgq.common.circle.chat.ChatActivity"
+            android:label="聊天界面"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.tencent.action.chat.activity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+
+        <!--since 3.3.0 接收JPush相关事件-->
+        <receiver android:name="com.tryine.sdgq.jiguang.PushMessageReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+                <category android:name="com.tryine.sdgq"></category>
+            </intent-filter>
+        </receiver>
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <!--User defined.  For test only 继承自cn.jpush.android.service.JCommonService-->
+        <service
+            android:name="com.tryine.sdgq.jiguang.PushService"
+            android:process=":pushcore"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service>
+
+
+
+    </application>
+
+
+</manifest>

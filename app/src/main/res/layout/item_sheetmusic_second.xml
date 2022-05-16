@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:lines="1"
+            android:ellipsize="end"
+            android:layout_weight="1"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_silverBean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:drawableLeft="@mipmap/ic_ydz"
+            android:drawablePadding="5dp"
+            android:text="0.00"
+            android:textColor="#AD8A7B"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/iv_isUnlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@mipmap/ic_suo" />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_line_dian" />
+</LinearLayout>

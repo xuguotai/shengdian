@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_outside_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="35dp">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:padding="5dp"
+            android:src="@mipmap/ic_pop_close" />
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="输入APP交易密码"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+
+    <com.xuexiang.xui.widget.edittext.verify.VerifyCodeEditText
+        android:id="@+id/et_payPassword"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        app:vcet_bg_focus="@drawable/vcet_shape_bg_focus1"
+        app:vcet_is_pwd="true"
+        app:vcet_number="6"
+        app:vcet_width="45dp" />
+
+    <TextView
+        android:id="@+id/tv_wjmm"
+        android:padding="5dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="50dp"
+        android:text="忘记密码"
+        android:textColor="#AF8C7E" />
+
+
+</LinearLayout>

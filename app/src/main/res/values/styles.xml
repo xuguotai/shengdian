@@ -1,0 +1,173 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- 窗口的背景颜色 -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="progress_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="main_menu_animstyle" parent="BottomShowAnimation"></style>
+
+    <!-- dialog从ios效果动画 -->
+    <style name="BottomShowAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/enter_bottom_menu</item>
+        <item name="android:windowExitAnimation">@anim/exit_bottom_menu</item>
+    </style>
+
+    <!-- 中间弹出框 -->
+    <style name="dialog_center" parent="Theme.AppCompat.Dialog.Alert">
+        <!-- 去黑边 -->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:screenOrientation">portrait</item>
+        <!-- 设置是否可滑动 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 背景 -->
+        <!-- 窗口背景 @color/touming的值为：#00000000 ， style中不能直接引用16进制，感谢评论区的老铁提醒-->
+
+        <item name="android:windowBackground">@color/transparent</item>
+
+        <!-- 是否变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 点击空白部分activity不消失 -->
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+    <style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <style name="AppBaseTheme" parent="android:Theme.Black.NoTitleBar"></style>
+
+    <style name="TRTCLiveRoomDialogFragment" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@color/trtcliveroom_color_bg_dialog_black</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <!--video model -->
+    <style name="TRTCLiveRoomDialogTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert" />
+
+    <!-- Input dialog theme. -->
+    <style name="TRTCLiveRoomInputDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!--BeautyPanelStyleStart-->
+    <style name="TRTCLiveRoomBeautyTheme" parent="BeautyPanelStyle">
+        <item name="beautyPanelColorPrimary">@color/trtcliveroom_color_accent</item>
+    </style>
+
+    <style name="TRTCLiveRoomLinkMic">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">180dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+    <!--BeautyPanelStyleEnd-->
+
+    <style name="BaseFragmentDialogTheme" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@color/trtcliveroom_color_bg_dialog_black</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <!-- 短视频录制主题UI配置-->
+    <style name="BeautyPanelStyle">
+        <!-- 美颜面板 -->
+        <item name="beautyPanelColorPrimary">@color/beauty_color_red</item>
+        <item name="beautyPanelSmoothIcon">@mipmap/beauty_ic_smooth</item>
+        <item name="beautyPanelNaturalIcon">@mipmap/beauty_ic_natural</item>
+        <item name="beautyPanelPituIcon">@mipmap/beauty_ic_pitu</item>
+        <item name="beautyPanelWhiteIcon">@mipmap/beauty_ic_white</item>
+        <item name="beautyPanelRuddyIcon">@mipmap/beauty_ic_ruddy</item>
+        <item name="beautyPanelBigeyeIcon">@mipmap/beauty_ic_bigeye</item>
+        <item name="beautyPanelFaceslimIcon">@mipmap/beauty_ic_faceslim</item>
+        <item name="beautyPanelFacevIcon">@mipmap/beauty_ic_facev</item>
+        <item name="beautyPanelChinIcon">@mipmap/beauty_ic_chin</item>
+        <item name="beautyPanelFaceshortIcon">@mipmap/beauty_ic_face_short</item>
+        <item name="beautyPanelNoseslimIcon">@mipmap/beauty_ic_noseslim</item>
+        <item name="beautyPanelEyeLightenIcon">@mipmap/beauty_ic_eye_bright</item>
+        <item name="beautyPanelToothWhiteIcon">@mipmap/beauty_ic_tooth_white</item>
+        <item name="beautyPanelPouchRemoveIcon">@mipmap/beauty_ic_pouch_remove</item>
+        <item name="beautyPanelSmileLinesRemoveIcon">@mipmap/beauty_ic_smile_lines</item>
+        <item name="beautyPanelWrinkleIcon">@mipmap/beauty_ic_wrinkles</item>
+        <item name="beautyPanelForeheadIcon">@mipmap/beauty_ic_forehead</item>
+        <item name="beautyPanelEyeDistanceIcon">@mipmap/beauty_ic_eye_distance</item>
+        <item name="beautyPanelEyeAngleIcon">@mipmap/beauty_ic_eye_angle</item>
+        <item name="beautyPanelMouthShapeIcon">@mipmap/beauty_ic_mouse_shape</item>
+        <item name="beautyPanelNoseWingIcon">@mipmap/beauty_ic_nose_wing</item>
+        <item name="beautyPanelNosePositionIcon">@mipmap/beauty_ic_nose_position</item>
+        <item name="beautyPanelMouseWidthIcon">@mipmap/beauty_ic_mouse_width</item>
+        <item name="beautyPanelFaceShapeIcon">@mipmap/beauty_ic_face_shape</item>
+    </style>
+
+    <!-- 自定义loading dialog -->
+    <style name="BeautyLoadingDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <style name="TUIGiftListPanelViewTheme" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@color/tuigift_color_bg_dialog</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="TUIGiftButtonStyle">
+        <item name="android:layout_width">52dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="LivePusherMlvbDialogFragment" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+</resources>

@@ -1,0 +1,217 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "com.tryine.sdgq"
+        minSdkVersion 20
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0.0"
+
+        //  MD5:  32:F9:D2:31:2D:CE:43:78:69:78:98:46:DA:CD:53:9E
+        //  SHA1: BF:BC:B2:FA:6E:E7:AF:F1:07:C1:AE:00:64:4D:53:3A:AF:C2:59:DE
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfigs {
+            release {
+                keyAlias 'sdgq'
+                keyPassword 'sd123456'
+                storeFile file('../sd.jks')
+                storePassword 'sd123456'
+            }
+
+        }
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "57fd253b6032227330aa81f0", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+
+    }
+
+    defaultConfig {
+        // 这里添加
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "Shengdian" + "_v" +
+                    defaultConfig.versionName + "_" + defaultConfig.versionCode + "_" +
+                    new Date().format("yyyy-MM-dd") + "_" + buildType.name +
+                    ".apk"
+        }
+    }
+
+
+    packagingOptions {
+        pickFirst '**/libc++_shared.so'
+        doNotStrip "*/armeabi/libYTCommon.so"
+        doNotStrip "*/armeabi-v7a/libYTCommon.so"
+        doNotStrip "*/x86/libYTCommon.so"
+        doNotStrip "*/arm64-v8a/libYTCommon.so"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //adapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+
+    //图片加载
+
+        implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+//        annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+    //eventbus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+
+    //状态栏
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
+    //SmartRefreshLayout 下拉刷新 上拉加载
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
+
+    //虚拟刷新头
+    implementation 'com.scwang.smart:refresh-header-material:2.0.1'
+
+    //球脉冲加载
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'
+
+    //FlycoTabLayout
+    implementation 'com.flyco.roundview:FlycoRoundView_Lib:1.1.2@aar'
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:1.5.0@aar'
+
+    //拍照，图库选择
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.6.0'
+
+    //okhttp
+    implementation 'com.zhy:okhttputils:2.6.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+    //日志输入
+    implementation 'com.blankj:utilcodex:1.28.4'
+
+    // 导入Gson 库
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //视频播放
+    implementation 'cn.yc:YCVideoPlayerLib:2.6.6'
+
+    //图片放大
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+
+    //二维码扫码
+    implementation 'com.github.xuexiangjys:XQRCode:1.0.6'
+
+    //流式布局
+    implementation 'com.google.android:flexbox:1.0.0'
+
+    //上下拉刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.3'
+    implementation 'com.blankj:utilcodex:1.28.4'
+
+    //日历控件
+    implementation 'com.haibin:calendarview:3.6.9'
+
+    //wheelview
+    implementation 'com.contrarywind:wheelview:4.0.9'
+    implementation 'com.wx.wheelview:wheelview:1.3.3'
+
+    //webview加载
+    implementation 'com.just.agentweb:agentweb:4.1.3'
+
+    //腾讯
+    implementation project(':superplayerkit')
+    implementation('com.tencent.qcloud:cosxml:5.5.3') {
+        exclude group: 'com.tencent.qcloud', module: 'mtaUtils' //关闭 mta 上报功能}
+    }
+    //腾讯IM
+    implementation project(':tuikit')
+
+    //XUI
+    implementation 'com.github.xuexiangjys:XUI:1.1.4'
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.google.android.material:material:1.2.0'
+
+    //QQ登录
+    implementation files('libs/open_sdk_3.5.4.11_r3f56456_lite.jar')
+
+    //微信登录
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation 'com.contrarywind:wheelview:4.1.0'
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+
+    //支付宝
+    implementation(name: 'alipaySdk-15.7.4-20200228192259', ext: 'aar')
+
+    //腾讯直播
+    implementation 'com.tencent.liteav.tuikit:tuicore:latest.release'
+    implementation 'com.airbnb.android:lottie:4.2.0'
+
+    //    implementation 'com.tencent.liteav:LiteAVSDK_Professional:latest.release'
+
+    //    implementation "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
+
+    //    implementation 'com.tencent.imsdk:imsdk:latest.release'
+    implementation files('libs/AMap_Location_V5.3.1_20210331.jar')
+    implementation files('libs/AMap_Search_V7.9.0_20210331.jar')
+    implementation files('libs/Android_Map3D_SDK_V7.9.1_20210414.jar')
+    implementation files('libs/umeng-share-core-7.0.3.jar')
+    implementation files('libs/umeng-share-sina-simplify-7.0.3.jar')
+    implementation files('libs/umeng-share-wechat-simplify-7.0.3.jar')
+    implementation 'com.umeng.umsdk:common:9.1.0'
+    // (必选)
+    implementation 'com.umeng.umsdk:asms:1.1.3'
+    // asms包依赖(必选)
+    implementation 'com.umeng.umsdk:crash:0.0.4'
+
+    //极光
+    implementation 'cn.jiguang.sdk:jcore:2.7.2'  // 此处以JCore 2.7.2 版本为例。
+    implementation 'cn.jiguang.sdk:jpush:4.0.0'  // 此处以JPush 4.0.0 版本为例
+
+
+
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_root"
+    android:layout_width="wrap_content"
+    android:layout_height="15dp"
+    android:background="@mipmap/ic_personal_dz_bg_1"
+    android:gravity="center"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp">
+
+
+    <TextView
+        android:id="@+id/tv_dj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="10sp" />
+
+</LinearLayout>
+
+

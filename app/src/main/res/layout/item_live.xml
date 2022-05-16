@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <com.tryine.sdgq.view.roundImageView.RoundImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            app:corner_bottom_left_radius="5dp"
+            app:corner_bottom_right_radius="5dp"
+            app:corner_top_left_radius="5dp"
+            app:corner_top_right_radius="5dp" />
+
+        <TextView
+            android:id="@+id/tv_zbz"
+            android:visibility="gone"
+            android:layout_width="45dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@mipmap/ic_live_zbz"
+            android:gravity="center"
+            android:text="直播中"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="10dp"
+            android:lines="2"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_goldBean"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_jdz"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:text="2000 金豆解锁"
+            android:textColor="#B89180"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

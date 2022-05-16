@@ -1,0 +1,169 @@
+package com.tryine.sdgq.common.live.tencent.liteav.tuigift.model;
+
+import android.text.TextUtils;
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.tencent.imsdk.v2.V2TIMGroupMemberInfo;
+import com.tencent.imsdk.v2.V2TIMManager;
+import com.tencent.imsdk.v2.V2TIMMessage;
+import com.tencent.imsdk.v2.V2TIMSimpleMsgListener;
+import com.tencent.imsdk.v2.V2TIMValueCallback;
+import com.tencent.qcloud.tuicore.TUILogin;
+import com.tryine.sdgq.common.live.tencent.liteav.basic.UserModel;
+import com.tryine.sdgq.common.live.tencent.liteav.basic.UserModelManager;
+import com.tryine.sdgq.common.live.tencent.liteav.tuigift.presenter.TUIGiftCallBack;
+import com.tryine.sdgq.common.live.tencent.liteav.tuigift.presenter.TUIGiftPresenter;
+
+import java.util.HashMap;
+
+/**
+ * 负责处理礼物发送、接受的消息服务
+ */
+public class TUIGiftIMService {
+    private static final String TAG = "TUIGiftIMService";
+
+    private String mGroupId;
+    private RecvGiftMsgListener mRecvGiftMsgListener;
+    private TUIGiftPresenter mPresenter;
+
+
+    public TUIGiftIMService(String groupId) {
+        this.mGroupId = groupId;
+        mRecvGiftMsgListener = new RecvGiftMsgListener();
+        initIMListener();
+    }
+
+    public void setGroupId(String groupId) {
+        mGroupId = groupId;
+    }
+
+    private void initIMListener() {
+        V2TIMManager.getInstance().addSimpleMsgListener(mRecvGiftMsgListener);
+    }
+
+    private void unInitImListener() {
+        V2TIMManager.getInstance().removeSimpleMsgListener(mRecvGiftMsgListener);
+    }
+
+    public void setPresenter(TUIGiftPresenter presenter) {
+        this.mPresenter = presenter;
+    }
+
+    /**
+     * 接收礼物信息
+     */
+    private class RecvGiftMsgListener extends V2TIMSimpleMsgListener {
+
+        @Override
+        public void onRecvGroupCustomMessage(String msgID, String groupID, V2TIMGroupMemberInfo sender, byte[] customData) {
+            if (groupID == null || !groupID.equals(mGroupId)) {
+                return;
+            }
+            String customStr = new String(customData);
+            String[] customStrs = customStr.split("!#!");
+            Log.i(TAG, "customData :" + customStr);
+            if (TextUtils.isEmpty(customStr)) {
+                Log.d(TAG, "onRecvGroupCustomMessage customData is empty");
+                return;
+            }
+
+            try {
+//                Gson gson = new Gson();
+//                TUIGiftJson json = gson.fromJson(customStr, TUIGiftJson.class);
+//                if (!TUIGiftConstants.VALUE_VERSION.equals(json.getVersion())) {
+//                    Log.e(TAG, "protocol version is not match, ignore msg.");
+//                }
+
+                //如果不是礼物消息,则不处理
+//                if (!TUIGiftConstants.VALUE_BUSINESS_ID.equals(json.getBusinessID())) {
+//                    Log.d(TAG, "onRecvGroupCustomMessage error : this is not gift msg.");
+//                    return;
+//                }
+//
+//                //礼物信息
+//                TUIGiftJson.Data data = json.getData();
+//                //扩展信息
+//                TUIGiftJson.Data.ExtInfo extInfo = data.getExtInfo();
+
+                HashMap<String, String> userMap = new HashMap<>();
+                userMap.put(TUIGiftConstants.KEY_USER_ID, sender.getUserID());
+                userMap.put(TUIGiftConstants.KEY_USER_NAME, sender.getNickName());
+                userMap.put(TUIGiftConstants.KEY_USER_AVATAR, sender.getFaceUrl());
+
+                TUIGiftModel model = new TUIGiftModel();
+                model.giftId = customStrs[0];
+                model.animationUrl = "";
+                model.normalImageUrl = customStrs[2];
+                model.giveDesc = customStrs[1];
+                model.extInfo = userMap;
+                Log.i(TAG, "model: " + model.toString());
+                if (mPresenter != null) {
+                    mPresenter.recvGroupGiftMessage(mGroupId, model);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * 发送礼物信息
+     *
+     * @param giftModel 待发送礼物信息
+     * @param callback  发送结果回调
+     */
+    public void sendGroupGiftMessage(TUIGiftModel giftModel, final TUIGiftCallBack.ActionCallBack callback) {
+//        String data = getCusMsgJsonStr(giftModel.giveDesc+"!#!"+giftModel.normalImageUrl);
+        String data = giftModel.giftId + "!#!" + giftModel.giveDesc + "!#!" + giftModel.normalImageUrl;
+        Log.i(TAG, "send data: " + data.toString());
+        V2TIMManager.getInstance().sendGroupCustomMessage(data.getBytes(), mGroupId, V2TIMMessage.V2TIM_PRIORITY_NORMAL, new V2TIMValueCallback<V2TIMMessage>() {
+            @Override
+            public void onError(int i, String s) {
+                if (callback != null) {
+                    callback.onCallback(i, s);
+                }
+            }
+
+            @Override
+            public void onSuccess(V2TIMMessage v2TIMMessage) {
+                if (callback != null) {
+                    callback.onCallback(0, "send group message success.");
+                }
+            }
+        });
+    }
+
+    /**
+     * 将礼物信息转换成JSON串
+     *
+     * @param giftModel 待转换礼物信息
+     * @return 转换好的JSON串
+     */
+    public static String getCusMsgJsonStr(TUIGiftModel giftModel) {
+        TUIGiftJson sendJson = new TUIGiftJson();
+        sendJson.setBusinessID(TUIGiftConstants.VALUE_BUSINESS_ID);
+        sendJson.setPlatform(TUIGiftConstants.VALUE_PLATFORM);
+        sendJson.setVersion(TUIGiftConstants.VALUE_VERSION);
+
+        TUIGiftJson.Data data = new TUIGiftJson.Data();
+        data.setMessage(giftModel.giveDesc);
+        data.setLottieUrl(giftModel.animationUrl);
+        data.setImageUrl(giftModel.normalImageUrl);
+        data.setGiftId(giftModel.giftId);
+
+        final UserModel userModel = UserModelManager.getInstance().getUserModel();
+        //扩展信息
+        TUIGiftJson.Data.ExtInfo extInfo = new TUIGiftJson.Data.ExtInfo();
+        extInfo.setUserID(TUILogin.getUserId());
+        extInfo.setNickName(userModel.userName);
+        extInfo.setAvatarUrl(userModel.userAvatar);
+        extInfo.setUserID(userModel.userId);
+
+        data.setExtInfo(extInfo);
+        sendJson.setData(data);
+
+        Gson gson = new Gson();
+        return gson.toJson(sendJson);
+    }
+}

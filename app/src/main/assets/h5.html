@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="referrer" content="origin-when-crossorigin"/>
+    <meta name="description" content="本篇博客主要介绍了一种简单的安卓与js方法互相调用的方式。"/>
+    <meta property="og:description" content="本篇博客主要介绍了一种简单的安卓与js方法互相调用的方式。"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Android与js互相调用 - 懒星人 - 博客园</title>
+</head>
+<script>
+    var u = navigator.userAgent;
+    console.log(navigator.userAgent.match())
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    function share() {
+        if (isAndroid == true) {
+            window.shareListener.onShare('分享的标题','分享的内容啊','http://www.baidu.com')
+        } else if(isiOS == true) {
+            testobject.ZTHTestParameteroneAndParametertwoAndParameterThree("分享的标题","分享的内容啊","http://www.baidu.com");
+        }else{
+           // console.log("不是手机")
+        }
+    }
+     function onBack() {
+          if (isAndroid == true) {
+                window.shareListener.onAppBack()
+            } else if(isiOS == true) {
+
+            }
+     }
+
+    function getUserId(userId) {
+        var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+        httpRequest.open('POST', 'http://47.113.102.63:7800/openapi/video/vote/list', true); //第二步：打开连接
+        httpRequest.setRequestHeader("Content-type","application/json");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.setRequestHeader("userId",userId);//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send('{"pageNum":"1","pageSize":"10"}');//发送请求 将情头体写在send中
+        /**
+        * 获取数据后的处理程序
+        */
+        httpRequest.onreadystatechange = function () {//请求后的回调接口，可将请求成功后要执行的程序写在其中
+        if (httpRequest.readyState == 4 && httpRequest.status == 200) {//验证请求是否发送成功
+        var json = httpRequest.responseText;//获取到服务端返回的数据
+        console.log(json);
+        }
+        };
+    }
+
+
+
+
+</script>
+
+<body>
+
+
+  <a href="https://home.cnblogs.com/">我的园子</a>
+ 
+<button onclick="javascript:share()">
+    调用安卓方法
+</button>
+</body>
+
+
+</html>

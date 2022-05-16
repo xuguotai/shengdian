@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/bar_title_backwhite" />
+
+
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="25dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="姓名"
+                   android:textColor="#090909"
+                   android:textSize="16sp" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="*"
+                   android:textColor="#FF3F3F" />
+
+           </LinearLayout>
+
+
+           <EditText
+               android:id="@+id/et_name"
+               android:layout_width="match_parent"
+               android:layout_height="45dp"
+               android:layout_marginLeft="25dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginRight="25dp"
+               android:background="@drawable/shape_edittext_radius5_f5f5f5"
+               android:hint="请输入您的姓名"
+               android:paddingLeft="10dp"
+               android:textColorHint="#898989"
+               android:textSize="14sp" />
+
+           <LinearLayout
+               android:layout_marginTop="15dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="25dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="联系方式"
+                   android:textColor="#090909"
+                   android:textSize="16sp" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="*"
+                   android:textColor="#FF3F3F" />
+
+           </LinearLayout>
+
+
+           <EditText
+               android:id="@+id/et_phone"
+               android:layout_width="match_parent"
+               android:layout_height="45dp"
+               android:layout_marginLeft="25dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginRight="25dp"
+               android:background="@drawable/shape_edittext_radius5_f5f5f5"
+               android:hint="请输入联系方式"
+               android:inputType="number"
+               android:paddingLeft="10dp"
+               android:textColorHint="#898989"
+               android:textSize="14sp" />
+
+
+           <LinearLayout
+               android:layout_marginTop="15dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="25dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="工作年限"
+                   android:textColor="#090909"
+                   android:textSize="16sp" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="*"
+                   android:textColor="#FF3F3F" />
+
+           </LinearLayout>
+
+
+           <EditText
+               android:id="@+id/et_educationLayer"
+               android:layout_width="match_parent"
+               android:layout_height="45dp"
+               android:layout_marginLeft="25dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginRight="25dp"
+               android:background="@drawable/shape_edittext_radius5_f5f5f5"
+               android:hint="请输入工作年限"
+               android:paddingLeft="10dp"
+               android:textColorHint="#898989"
+               android:textSize="14sp" />
+
+
+           <LinearLayout
+               android:layout_marginTop="15dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="25dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="毕业院校"
+                   android:textColor="#090909"
+                   android:textSize="16sp" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="*"
+                   android:textColor="#FF3F3F" />
+
+           </LinearLayout>
+
+
+           <EditText
+               android:id="@+id/et_graduateSchool"
+               android:layout_width="match_parent"
+               android:layout_height="45dp"
+               android:layout_marginLeft="25dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginRight="25dp"
+               android:background="@drawable/shape_edittext_radius5_f5f5f5"
+               android:hint="请输入毕业院校"
+               android:paddingLeft="10dp"
+               android:textColorHint="#898989"
+               android:textSize="14sp" />
+
+
+           <LinearLayout
+               android:layout_marginTop="15dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="25dp"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="备注"
+                   android:textColor="#090909"
+                   android:textSize="16sp" />
+
+
+
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="130dp"
+               android:layout_centerVertical="true"
+               android:layout_marginLeft="25dp"
+               android:layout_marginTop="10dp"
+               android:layout_marginRight="25dp"
+               android:layout_toLeftOf="@+id/iv_order"
+               android:background="@drawable/shape_edittext_radius5_f5f5f5"
+               android:gravity="center_vertical"
+               android:orientation="vertical">
+
+               <EditText
+                   android:id="@+id/et_remake"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_margin="15dp"
+                   android:layout_marginLeft="15dp"
+                   android:layout_weight="1"
+                   android:background="@null"
+                   android:maxLength="300"
+                   android:gravity="left|top"
+                   android:hint="提交报名信息后，稍后会有工作人员与您联 系，请保持联系方式的畅通，谢谢。"
+                   android:textColorHint="#898989"
+                   android:textSize="14sp" />
+
+               <TextView
+                   android:id="@+id/tv_size"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="right"
+                   android:layout_marginRight="10dp"
+                   android:layout_marginBottom="10dp"
+                   android:text="0/300"
+                   android:textColor="#898989"
+                   android:textSize="12sp" />
+
+           </LinearLayout>
+
+
+           <TextView
+               android:id="@+id/tv_submit"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="20dp"
+               android:layout_marginTop="50dp"
+               android:background="@mipmap/ic_button_send_bg"
+               android:gravity="center"
+               android:text="成为老师"
+               android:textColor="@color/white"
+               android:textSize="18sp" />
+
+
+       </LinearLayout>
+
+   </androidx.core.widget.NestedScrollView>
+
+
+
+
+    </LinearLayout>

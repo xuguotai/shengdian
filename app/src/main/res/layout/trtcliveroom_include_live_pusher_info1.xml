@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:ignore="contentDescription">
+
+    <RelativeLayout
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/trtcliveroom_pusher_info_background"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        tools:ignore="contentDescription">
+
+        <com.tryine.sdgq.view.CircleImageView
+            android:id="@+id/iv_anchor_head"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/trtcliveroom_bg_cover" />
+
+        <TextView
+            android:id="@+id/tv_anchor_broadcasting_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iv_anchor_record_ball"
+            android:maxLines="1"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="@color/trtcliveroom_color_white"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/iv_anchor_record_ball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@id/iv_anchor_head"
+            android:background="@drawable/trtcliveroom_liveshow_item_dot"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_anchor_record_ball"
+            android:layout_toEndOf="@id/iv_anchor_head"
+            android:layout_toRightOf="@id/iv_anchor_head"
+            android:textColor="@color/trtcliveroom_color_white"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tv_room_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_anchor_broadcasting_time"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iv_anchor_head"
+            android:textColor="@color/trtcliveroom_color_white"
+            android:textSize="10sp" />
+
+
+    </RelativeLayout>
+
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:minWidth="100dp"
+       android:visibility="gone"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="30dp"
+       android:paddingRight="10dp"
+       android:background="@drawable/kecheng_stroke_radius_5"
+       android:orientation="vertical">
+
+       <TextView
+           android:layout_marginLeft="8dp"
+           android:drawablePadding="5dp"
+           android:layout_marginTop="5dp"
+           android:drawableLeft="@mipmap/ic_home_line"
+           android:layout_width="100dp"
+           android:layout_height="wrap_content"
+           android:textColor="#000000"
+           android:text="课程章节" />
+
+       <TextView
+           android:id="@+id/tv_kcname"
+           android:layout_marginLeft="18dp"
+           android:drawablePadding="5dp"
+           android:layout_marginTop="5dp"
+           android:layout_width="100dp"
+           android:textSize="16sp"
+           android:layout_marginBottom="10dp"
+           android:layout_height="wrap_content"
+           android:textColor="#000000"/>
+
+   </LinearLayout>
+
+
+</LinearLayout>

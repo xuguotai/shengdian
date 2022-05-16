@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:id="@+id/ll_root"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/cb_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="@color/transparent"
+        android:button="@drawable/pro_check_bg"
+        android:layout_marginRight="10dp"
+        android:checked="true"
+        android:text="  低俗色情"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+</LinearLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Custom_Round_Image_View">
+        <attr name="radius" format="dimension"/>
+        <attr name="left_top_radius" format="dimension"/>
+        <attr name="right_top_radius" format="dimension"/>
+        <attr name="right_bottom_radius" format="dimension"/>
+        <attr name="left_bottom_radius" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="is_circle" format="boolean" />
+        <attr name="is_cover_src" format="boolean" />
+        <attr name="corner_radius" format="dimension" />
+        <attr name="corner_top_left_radius" format="dimension" />
+        <attr name="corner_top_right_radius" format="dimension" />
+        <attr name="corner_bottom_left_radius" format="dimension" />
+        <attr name="corner_bottom_right_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="inner_border_width" format="dimension" />
+        <attr name="inner_border_color" format="color" />
+        <attr name="mask_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="AssNineGridView">
+        <attr name="angv_singleImgRatio" format="float" />
+        <attr name="angv_gridSpace" format="dimension" />
+        <attr name="angv_maxSize" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SDAvatarListLayout">
+        <!--创建的最大ImageView数量-->
+        <attr name="image_max_count" format="integer" />
+        <!--创建的ImageView的大小-->
+        <attr name="image_size" format="dimension" />
+        <!--要叠加的ImageView偏移量-->
+        <attr name="image_offset" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="RatingBar">
+        <!--星星间距-->
+        <attr format="dimension" name="starDistance"/>
+        <!--星星大小-->
+        <attr format="dimension" name="starSize"/>
+        <!--星星个数-->
+        <attr format="integer" name="starCount"/>
+        <!--星星空图-->
+        <attr format="reference" name="starEmpty"/>
+        <!--星星满图-->
+        <attr format="reference" name="starFill"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="TasksCompletedView">
+        <attr name="radiusTasks" format="dimension"/>
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="circleColor" format="color"/>
+        <attr name="ringColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="StickyScrollView">
+        <attr name="stuckShadowHeight" format="dimension" />
+        <attr name="stuckShadowDrawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="NoticeView">
+        <!-- 图标 -->
+        <attr name="nvIcon" format="reference"/>
+        <!-- 图标与内容的间隙 -->
+        <attr name="nvIconPadding" format="dimension"/>
+        <!-- 图标颜色 -->
+        <attr name="nvIconTint" format="color"/>
+
+        <!-- 文本尺寸 -->
+        <attr name="nvTextSize" format="dimension"/>
+        <!-- 文本颜色 -->
+        <attr name="nvTextColor" format="color"/>
+        <!-- 文本最大行数 -->
+        <attr name="nvTextMaxLines" format="integer"/>
+        <!-- 文本对齐方式 -->
+        <attr name="nvTextGravity" format="integer">
+            <enum name="left" value="3"/>
+            <enum name="center" value="17"/>
+            <enum name="right" value="5"/>
+        </attr>
+
+        <!-- 切换动画间隔时间，毫秒 -->
+        <attr name="nvInterval" format="integer"/>
+        <!-- 切换动画持续时间，毫秒 -->
+        <attr name="nvDuration" format="integer"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="BeautyPanelStyle">
+        <!-- 美颜面板 -->
+        <attr name="beautyPanelColorPrimary" format="reference"/>
+        <attr name="beautyPanelSmoothIcon" format="reference" />
+        <attr name="beautyPanelNaturalIcon" format="reference" />
+        <attr name="beautyPanelPituIcon" format="reference" />
+        <attr name="beautyPanelWhiteIcon" format="reference" />
+        <attr name="beautyPanelRuddyIcon" format="reference" />
+        <attr name="beautyPanelBigeyeIcon" format="reference" />
+        <attr name="beautyPanelFaceslimIcon" format="reference" />
+        <attr name="beautyPanelFacevIcon" format="reference" />
+        <attr name="beautyPanelChinIcon" format="reference" />
+        <attr name="beautyPanelFaceshortIcon" format="reference" />
+        <attr name="beautyPanelNoseslimIcon" format="reference" />
+        <attr name="beautyPanelEyeLightenIcon" format="reference" />
+        <attr name="beautyPanelToothWhiteIcon" format="reference" />
+        <attr name="beautyPanelPouchRemoveIcon" format="reference" />
+        <attr name="beautyPanelSmileLinesRemoveIcon" format="reference" />
+        <attr name="beautyPanelWrinkleIcon" format="reference" />
+        <attr name="beautyPanelForeheadIcon" format="reference" />
+        <attr name="beautyPanelEyeDistanceIcon" format="reference" />
+        <attr name="beautyPanelEyeAngleIcon" format="reference" />
+        <attr name="beautyPanelMouthShapeIcon" format="reference" />
+        <attr name="beautyPanelNoseWingIcon" format="reference" />
+        <attr name="beautyPanelNosePositionIcon" format="reference" />
+        <attr name="beautyPanelMouseWidthIcon" format="reference" />
+        <attr name="beautyPanelFaceShapeIcon" format="reference" />
+    </declare-styleable>
+
+    <!-- 飘星自定义属性 -->
+    <declare-styleable name="TRTCLiveRoomHeartLayout">
+        <attr name="initX" format="dimension" />
+        <attr name="initY" format="dimension" />
+        <attr name="xRand" format="dimension" />
+        <attr name="animLengthRand" format="dimension" />
+        <attr name="xPointFactor" format="dimension" />
+        <attr name="animLength" format="dimension" />
+        <attr name="heart_width" format="dimension" />
+        <attr name="heart_height" format="dimension" />
+        <attr name="bezierFactor" format="integer" />
+        <attr name="anim_duration" format="integer" />
+    </declare-styleable>
+
+    <!-- 标题模板自定义属性 -->
+    <declare-styleable name="TRTCLiveRoomCustomTitle">
+        <!-- 标题文案 -->
+        <attr name="titleText" format="string"/>
+        <!-- 是否有back按钮 -->
+        <attr name="canBack" format="boolean"/>
+        <!-- back按钮文案 -->
+        <attr name="backText" format="string"/>
+        <!-- 右侧更多功能按钮文字 -->
+        <attr name="moreText" format="string"/>
+    </declare-styleable>
+
+</resources>
